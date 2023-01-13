@@ -1,13 +1,14 @@
 #include <iostream>
-#include<cmath>
+#include <cmath>
 using namespace std;
 
 main()
 {
     string yearType;
     float holidays, countOfWeekends;
-    float finalDays;
-    float playingHolidays;
+    float playingDays,playingInSofia,playing,weeksInSofia;
+    int playingHolidays,tFinalDays;
+    int weekends = 48;
 
     cout << "Enter Type of Year: ";
     cin >> yearType;
@@ -16,16 +17,21 @@ main()
     cout << "Enter the Count of Weekends: ";
     cin >> countOfWeekends;
 
-    playingHolidays = holidays * 2 / 3;
+    playingHolidays = holidays *2/3;
+    weeksInSofia = weekends - countOfWeekends;
+    playingInSofia= weeksInSofia*3/4;
+    playingDays = playingInSofia+playingHolidays+countOfWeekends;
 
     if (yearType == "leap")
     {
-        finalDays = ((playingHolidays + 36) * 0.15) + (playingHolidays + 36);
+       tFinalDays = (playingDays*0.15) + playingDays;
     }
     else
     {
-        finalDays = 36 + playingHolidays;
+        tFinalDays =  playingDays;
     }
 
-    cout << "Vladmir plays: " << floor(finalDays) << " days.";
+    cout << "Vladmir plays: " << tFinalDays << " days.";
+   
+
 }
