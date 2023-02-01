@@ -4,9 +4,9 @@ using namespace std;
 main()
 {
     int arrSize = 4;
-    int amount;
+    float amount;
 
-    float array[arrSize] = {2, 100, 0, 0};
+    float array[arrSize] = {30,40,20,5};
     /*
     cout<<"Enter quarters: ";
     cin>>array[0];
@@ -20,13 +20,15 @@ main()
     cout << "Enter Total Due Amount: ";
     cin >> amount;
 
-    float sum = 0;
-    for (int idx = 0; idx < arrSize; idx++)
-    {
-        sum = sum + array[idx];
-    }
+    float cents,dimes,nickels,pennies;
+    cents=array[0]*25;
+    dimes=array[1]*10;
+    nickels=array[2]*5;
+    pennies=array[3]*1;
+    float sum = (cents+dimes+nickels+pennies)/100;
+    
 
-    if (sum <= amount)
+    if (sum >= amount)
     {
         cout << "True";
     }
